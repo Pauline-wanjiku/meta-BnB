@@ -6,36 +6,56 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 nav {
-  border: 1px solid red;
-  padding: 20px 40px;
-  margin: 0px auto;
-  gap: 15px;
+  /* border: 1px solid red; */
+  padding: 0px;
+  margin: 20px 0px;
   gap: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  justify-content: space-between;
 }
-ul {
+.logo {
+  /* border: 1px solid black; */
+}
+.logoImage {
+  /* border: 1px solid grey; */
+  max-width: 2rem;
+}
+.logoImage2 {
+  /* border: 1px solid yellow; */
+  max-width: 8rem;
+}
+#navbar {
+  /* border: 1px solid blue; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   position: fixed;
-  top: 100px;
-  right: 0px;
-  width: 200px;
-  height: 35vh;
+  top: -300px;
+  right: 100px;
   background-color: #2a3239;
+  width: 900px;
+  min-width: 10rem;
+  max-width: max-content;
   padding: 40px 0 0 10px;
+  margin: 0px;
+  padding: 0rem;
+  transition: 0.3s ease-in;
 }
-ul li {
+#navbar.active{
+    top:40px;
+}
+#navbar li {
+  /* border: 1px solid blue; */
   list-style: none;
-  padding: 0 20px;
-  position: relative;
-  margin: 2px;
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-ul li a {
+#navbar li a {
   text-decoration: none;
   font-family: "Red Rose";
   font-style: normal;
@@ -43,32 +63,55 @@ ul li a {
   font-size: 17px;
   line-height: 25px;
   color: white;
+  display: flex;
+  flex-direction: column;
 }
 #mobile {
   display: block;
 }
-#mobile li {
+#mobile i {
   font-size: 24px;
   cursor: pointer;
+  margin-top: 10px;
 }
 
-.logo {
-  border: 1px solid black;
-  margin: 0px 0px 0px 2px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.logoImage {
-  border: 1px solid grey;
-  max-width: 3rem;
-}
-.logoImage2 {
-  border: 1px solid yellow;
-  max-width: 8rem;
-}
 
 @media screen and (min-width: 768px) {
-  
+  nav {
+    margin: 0px auto;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  #navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    min-width: 400px;
+    height: auto;
+    background-color: #fff;
+  }
+  #navbar li {
+    margin: 0px;
+  }
+  #navbar li a {
+    text-decoration: none;
+    font-family: "Red Rose";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 25px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+  #mobile {
+    display: none;
+  }
 }
