@@ -1,32 +1,63 @@
-import React from "react";
+import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
+import metaBnBLogo from "./Images/MetaBnBLogo.png";
+import houseMeta from "./Images/houseLogo.png";
 
-function Navigation() {
+class Navigation extends Component {
+  state = { clicked: false };
+  handleClick = () => {
+    this.setState({clicked:!this.state.clicked})
+  }
+  render() {
+    return (
+      <>
+        <div>
+          <div>
+            <nav>
+              <div className="logo">
+                <img src={houseMeta} className="logoImage" alt="logo" />
+                <img src={metaBnBLogo} className="logoImage2" />
+              </div>
+              <ul>
+                <li>
+                  <NavLink to="#">HOME</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/PlaceToStay">PLACE TO STAY</NavLink>
+                </li>
+                <li>
+                  <NavLink to="#">NFTS</NavLink>
+                </li>
+                <li>
+                  <NavLink to="#">COMMUNITY</NavLink>
+                </li>
+                
+              </ul>
+              <div id="mobile" onClick={this.handleClick}>
+                <i
+                  id="bar"
+                  className={
+                    this.state.clicked ? "fas fa-times" : "fas fa-bars"
+                  }></i>
+                {/* <i className="fas fa-bars"></i> */}
+                {/* <i className="fas fa-times"></i> */}
+              </div>
+              <div className="connectWallet">
+                <ConnectWallet />
+              </div>
+            </nav>
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+const ConnectWallet = () => {
   return (
     <>
-      <div>
-        <div>logo</div>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <NavLink to="#">Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/PlaceToStay">Place to stay</NavLink>
-              </li>
-              <li>
-                <NavLink to="#">NFTS</NavLink>
-              </li>
-              <li>
-                <NavLink to="#">Community</NavLink>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+      <button className="connectWalletBtn">Connect Wallet</button>
     </>
   );
-}
+};
 
 export default Navigation;
